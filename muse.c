@@ -72,8 +72,12 @@ extern unsigned long long clock;
 bool GetBit (char slider);
 
 int main (int argc, char *argv[]) {
-    printf("Slider setting? ");
-    char sliderval = getChar();
+    int i; unsigned long long clock;
+    if (argc < 3) { quit("Needs a setting and a clock position!"); }
+    char sliderval = stringtochar(argv[1]);
+    i = stringtoint(argv[2]);
+    printf("%d", i);
+    clock = (unsigned long long)i;
     printf("your bit is %d", GetBit(sliderval));
 }
 
